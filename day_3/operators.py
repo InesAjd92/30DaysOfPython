@@ -1,47 +1,49 @@
-""" ### Exercices : Day 3
+### Day 3 : Operators ###
 
-# 1/ 
+## Exercises ## 
 
-age = int(25)
+# Level 1 : 
+
+# 1. Declare your age as integer variable'''
+'''age = int(25)
 print(age)
 
-# 2/ height
+# 2. Declare your height as a float variable
 
 height = float(157)
 print(height, "cm")
 
-# 3/ complex number
+# 3. Declare a variable that store a complex number
+
 complex_number = 12j - 4
 
-#4/ Write a script that prompts the user to enter
-# base and height of triangle and calculate an aera 
+# 4. Write a script that prompts the user to enter base and height of the triangle and calculate an area of this triangle (area = 0.5 x b x h).
 
 # The formula is = 0.5 * b * h
 
-base = int(input("The base is :"))
-height = float(input("The height is:"))
+base = int(input("Enter base :"))
+height = float(input("Enter height:"))
 area_of_triangle = 0.5 * base * height
 
 print("The area of the triangle is", area_of_triangle)
 
-# 5/ same but for the perimeter of the triangle
+# 5. Write a script that prompts the user to enter side a, side b, and side c of the triangle. Calculate the perimeter of the triangle (perimeter = a + b + c).
 
-# formula = a + b + c
+# The formula is = a + b + c
 
-a = int(input("a is:"))
-b = int(input("b is:"))
-c = int(input("c is:"))
+a = int(input("a is :"))
+b = int(input("b is :"))
+c = int(input("c is :"))
 
 perimeter = a + b + c 
 
-print("The perimeter of the triangle is :", perimeter)
+print("The perimeter of the triangle is : ", perimeter)
 
-#6 / get lengt and width 
+# 6. Get length and width of a rectangle using prompt. Calculate its area (area = length x width) and perimeter (perimeter = 2 x (length + width))
 
-length = int(input("The length of the rectangle is:"))
-width = int(input("The width of the rectangle is:"))
 
-# then get the area and perimenter
+length = int(input("The length of the rectangle is : "))
+width = int(input("The width of the rectangle is : "))
 
 area_of_rectangle = length * width
 print("The area of the rectangle is : ", area_of_rectangle)
@@ -49,10 +51,9 @@ print("The area of the rectangle is : ", area_of_rectangle)
 perimeter_of_rectangle = 2*(length+width)
 print("The perimeter of the rectangle is :", perimeter_of_rectangle)
 
-# 7 / Get radius, than calculate area and circumference where pi = 3.14
+# 7. Get radius of a circle using prompt. Calculate the area (area = pi x r x r) and circumference (c = 2 x pi x r) where pi = 3.14.
 
 pi = 3.14
-
 radius = int(input("The radius is"))
 
 area_of_circle = pi*radius*radius
@@ -61,38 +62,36 @@ print("The area of the circle is", area_of_circle)
 circumference_of_circle = 2*pi*radius
 print("The circumference of the circle is :", circumference_of_circle)
 
-# 8 / Calculate the slope, x-intercept and y-intercept of y = 2x -2
+# 8. Calculate the slope, x-intercept and y-intercept of y = 2x -2
 
-# its an equation like y = mx+b
+# It's an equation like y = mx+b
 
 # m is the slope
 # b is the y-intercept
 
 # So here : y = 2x-2
 
-#m = 2
-#y = -2
+# m = 2
+# y = -2
 
-# To find what is the y-intercept we need to find y when x = 0
+# To find what is the y-intercept I need to find y when x = 0
 
 # y = 2*0-2
 # y = -2
 # y-intercept = (0,-2)
 
-# To find what is the x-intercept we need to find x when y = 0
+# To find what is the x-intercept I need to find x when y = 0
 
-# So, this is 
 # 0 = 2x -2
 # 2 = 2x
 # 2/2 = x
 # x = 1
-# x-intercept = (1,1
-#  0)
+# x-intercept = (1,0)
 
-# Lets do this with python
+# Let's do this with python
 
-m = 2 #slope
-b = -2 #b is the y intercept 
+m = 2 # slope
+b = -2 # b is the y-intercept 
 slope = m
 
 y_intercept = (0, b) # for y the 0 is first
@@ -103,34 +102,37 @@ x_intercept = (x_intercept_x, 0)
 print("The slope is", slope)
 print("The y_intercept is ", y_intercept, "and the x_intercept is ", x_intercept)
 
-# J'ai eu un peu de mal car je connais pas ce genre de math mais c euké
+# 9. Slope is (m = y2-y1/x2-x1). Find the slope and Euclidean distance between point (2, 2) and point (6,10)
 
-# 9/ 
-
-y1 = int(input("The y1 is"))
-y2 = int(input("The y2 is"))
-x1 = int(input("The x1 is"))
-x2 = int(input("The x2 is"))
-
+y1 = int(input("The y1 is "))
+y2 = int(input("The y2 is "))
+x1 = int(input("The x1 is "))
+x2 = int(input("The x2 is "))
 
 slope = m
 m = (y2-y1)/(x2-x1)
 
 print("The slope is :", m)
 
- # For (2,2) and (6,10) the slope is 2
+# For (2,2) and (6,10) the slope is 2.
 
- # Pour calculer la distance euclidienne
+# Now, I will calculate the euclidian distance.
 
-distance_euclidienne = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
-print("The euclidian distance is", distance_euclidienne)
+euclidian_distance = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+print("The euclidian distance is ", euclidian_distance)
 
 # So, the euclidian distance for those points is 8.94427
 
-# 10 / The slopes in tasks 8 and 9 are the same
+# 10. Compare the slopes in tasks 8 and 9.
 
-# 11/ calculate the value of y, 
-# y = x^2 + 6x + 9
+# The slopes in tasks 8 and 9 are the same. 
+
+# 11. Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is going to be 0. '''
+
+x = int(input("Try some x "))
+y = (x)**2 + 6*(x) + 9
+print(y)
+
 
 # g pas réussi car c chiat
 
@@ -175,7 +177,7 @@ print(x, "is an even number", even_number)
 # it works! :)
 
 # 18 / floor_division = a // b
-
+'''
 print(7//3)
 print(int(2.7))
 
@@ -213,5 +215,6 @@ print(2, 1, 2, 4, 8)
 print(3, 1, 3, 9, 27)
 print(4, 1, 4, 16, 64)
 print(5, 1, 5, 25, 125)
-#idk if it was the right method
+#idk if it was the right method 
+'''
 
