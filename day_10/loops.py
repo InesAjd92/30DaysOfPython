@@ -1,115 +1,109 @@
-### Day 10 : Loops
+### Day 10 : Loops ###
 
-# Exercises : Level 1
+## Exercises ##
 
-# 1/ 
+# Level 1 : 
 
-count = 0 # we're starting from zero
+# 1. Iterate from 0 to 10 using a for loop, then do the same using a while loop.
 
-while count < 11:  # Tant que count est strictement inférieur à 11
-    print(count) # affiche count
-    count = count + 1 # en faissant count +1 partant de zérp
+# Using while loop
 
-# 
+count = 0  # starting from zero
 
-"""count = range(11) # 0 include, 11 exclude, step 1
+while count < 11:  # while count is less than 11
+    print(count)  # print count
+    count = count + 1  # increment count by 1
 
-for number in count:  # pour chaque element de la liste count
-    print(number) # print chaque number """
+# Using for loop
 
-# 2/ 
+count = range(11)  # 0 included, 11 excluded, step 1
 
-count = 11 #on part de 10 
+for number in count:  # for each element in count
+    print(number)  # print each number
 
-while count > 0 : # tant que count est supérieur à 0
-    count = count - 1 # et on fais count donc 10 - 1 pour arriver à zero
-    print(count) # on affiche 
+# 2. Iterate from 10 to 0 using a for loop, then do the same using a while loop.
 
-# 
+# Using while loop
 
-count = range(11, 1) #on commence par la fin, jusqu'a début
-for number in count:
+count = 11  # starting from 11
+
+while count > 0:  # while count is greater than 0
+    count = count - 1  # decrement count by 1
+    print(count)  # print count
+
+# Using for loop (note: range with step -1)
+
+for number in range(10, -1, -1):  # from 10 down to 0 inclusive
     print(number)
 
-# 3/
 
-# "While " repete un code tant qu'une condition est vrai 
-count = 1  # commencer avec 1 "#"
+# 3. Write a loop that makes seven calls to print(), so we get the following triangle:
+
+# Using while loop
+count = 1  # start at 1
 
 while count <= 7:
-    print("#" * count)  # affiche count fois le caractère #
-    count += 1  # augmenter count de 1
+    print("#" * count)  # print count times "#"
+    count += 1  # increment count by 1
 
+# Using for loop
 
-# 
-
-count = range(8) # va de 1 à 7
-
-for number in count:  # pour chaque element de count
-    print("#"*number) # on fais "#" fois le number d'element
+for number in range(1, 8):
+    print("#" * number)
 
 # bonus ecosia 
 
-count = 7 # on commmence a 7 
+count = 7  
 
 while count > 0: 
     print("#" * count)
     count = count - 1
 
 
-# 4/ 
+# 4. Use nested loops to create the following pattern:
 
-
-for line in range(8):  # répète 8 fois une ligne
-    for i in range(8):  # affiche 8 "#" sur la même ligne
+for line in range(8):  # repeat 8 times
+    for i in range(8):  # print 8 "#" on the same line
         print("#", end=" ")
-    print()  # saute à la ligne après chaque ligne de "#"
+    print()  # new line after each row
 
+# 5. Print the following pattern:
 
-# 5/ 
+for i in range(11):  # from 0 to 10 inclusive
+    square = i * i
+    print(f"{i} x {i} = {square}")
 
-
-for i in range(11): # car il y a 10 ligne 
-    square = i * i # il faut la stoquer 
-    print("{}*{} == {}".format(i, i, square))
+# 6. Iterate through the list ['Python', 'Numpy', 'Pandas', 'Django', 'Flask'] using a for loop and print out the items.
 
 lst = ['Python', 'Numpy', 'Pandas', 'Django', 'Flask']
-
-# 6/
 
 for skill in lst :
     print(skill)
 
-# 7/ 
-
-#even number = x % 2 and remainder == 0
+# 7. Use a for loop to iterate from 0 to 100 and print only even numbers
 
 for i in range(101):
     if i % 2 == 0:
         print(i) 
 
-
-# 8/
+# 8. Use a for loop to iterate from 0 to 100 and print only odd numbers
 
 for i in range(101):
     if i % 2 != 0:
         print(i) 
 
+# Level 2 :
 
-# Exercises : Level 2
+# 1. Use a for loop to iterate from 0 to 100 and print the sum of all numbers.
 
-
-# On initialise une variable 'total' à 0 pour y stocker la somme
 total = 0
 
-# On crée une boucle qui va parcourir les nombres de 1 à 100 inclus
 for i in range(1, 101):
-    # À chaque tour de boucle, on ajoute la valeur de i à la variable total
-    total += i  # équivalent à total = total + i
+    total += i  # same as total = total + 1
 
-# Après la boucle, on affiche la valeur finale de total, qui est la somme de 1 à 100
 print("The sum of all numbers is", total)
 
+# 2. Use a for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
 
 total_even = 0
 total_odd = 0
@@ -118,13 +112,15 @@ for i in range(1,101):
     if i % 2 == 0:
         total_even = total_even + i
         print(total_even)
-    if i % 2 != 0:
+    if i % 2 != 0: # or "else"
         total_odd = total_odd + i 
         print(total_odd)
-print("The sum of all evens is", total_even, "And the sum of all odds is ", total_odd)
+print("The sum of all evens is", total_even, "and the sum of all odds is ", total_odd)
 
 
-# Exercises : Level 3
+# Level 3 : 
+
+# 1. Go to the data folder and use the countries.py file. Loop through the countries and extract all the countries containing the word land.
 
 countries = [
   'Afghanistan',
@@ -329,11 +325,14 @@ for country in countries:
         print(country) 
 
 
-# 2/ 
+# 2. This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
 
 lst = ['banana', 'orange', 'mango', 'lemon']
 
-# 3/ 
+for f in reversed(fruits):
+    print(f)
+
+# 3. Go to the data folder and use the countries_data.py file.
 
 country_data = [
     {
@@ -2956,50 +2955,47 @@ country_data = [
     }
 ]
 
+# i. What are the total number of languages in the data
+
 languages_set = set()
 
 for country in country_data:
     for language in country["languages"]:
         languages_set.add(language)
 
-print("Nombre total de langues uniques :", len(languages_set))
+print("Total number of unique languages:", len(languages_set))
 
-#languages_set stock les langues uniques
-#nous on veut compter les occurences pour savoir quels sont les plus 
+# languages_set stores unique languages
 
-# Dictionnaire pour stocker le nombre de pays parlant chaque langue
+# ii. Find the ten most spoken languages from the data
+
+# Dictionary to store the number of countries speaking each language
+
 language_counts = {}
 
-for country in country_data: #pour chaque pays dans le df
-    for language in country["languages"]: #pour chaque langue dans le key/value languages
-        if language in language_counts: #paz comrpis
-            language_counts[language] += 1  # la langue existe déjà, on ajoute 1
+for country in country_data:
+    for language in country["languages"]:
+        if language in language_counts:
+            language_counts[language] += 1  # language already counted, increment count
         else:
-            language_counts[language] = 1   # première fois qu'on voit cette langue
+            language_counts[language] = 1   # first time seeing this language
 
-# Maintenant, on veut trier les langues par nombre d'occurrences décroissant
-# Comme on ne peut pas trier un dictionnaire directement, on transforme en liste de tuples
+# Sort languages by number of countries speaking them in descending order
+# Since dictionaries can't be sorted directly, convert to list of tuples
 
 sorted_languages = sorted(language_counts.items(), key=lambda x: x[1], reverse=True)
 
-# Afficher les 10 langues les plus parlées
-print("Top 10 des langues les plus parlées (nombre de pays) :")
+# Print top 10 most spoken languages by number of countries
+
+print("Top 10 most spoken languages (by number of countries):")
 for i in range(min(10, len(sorted_languages))):
     language, count = sorted_languages[i]
-    print(f"{language}: parlée dans {count} pays")
+    print(f"{language}: spoken in {count} countries")
 
+# iii. Find the the top 10 most populated countries
 
-top_10 = []
+top_10 = sorted(country_data, key=lambda x: x["population"], reverse=True)[:10]
 
-for country in country_data:
-    # Ajouter le pays dans la liste top_10
-    top_10.append(country)
-    # Trier la liste top_10 par population décroissante
-    top_10 = sorted(top_10, key=lambda x: x["population"], reverse=True)
-    # Garder seulement les 10 premiers
-    if len(top_10) > 10:
-        top_10.pop()
-
-print("Les 10 pays les plus peuplés :")
+print("Top 10 most populated countries:")
 for country in top_10:
     print(f"{country['name']}: {country['population']}")

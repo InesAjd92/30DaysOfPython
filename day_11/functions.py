@@ -1,19 +1,10 @@
-### Day 11 : Exercises
+### Day 11 : Functions ###
 
-"""
-Listes : Ordonnées, modifiables, permettent les doublons. Exemple : [1, 2, 3].
-Tuples : Ordonnés, immuables, permettent les doublons. Exemple : (1, 2, 3).
-Sets : Non ordonnés, modifiables, ne permettent pas les doublons. Exemple : {1, 2, 3}.
+## Exercises ##
 
-Choisissez une liste si vous avez besoin de modifier vos données ou de conserver leur ordre.
-Optez pour un tuple pour des données fixes ou pour optimiser la mémoire.
-Utilisez un set pour des éléments uniques ou des opérations comme l’union et l’intersection.
+# Level 1 :
 
-"""
-
-## Level 1 
-
-# 1/ Declare a function add_two_numbers. It takes two parameters and it returns a sum.
+# 1. Declare a function add_two_numbers. It takes two parameters and it returns a sum.
 
 
 def add_two_numbers(num1, num2):
@@ -21,33 +12,34 @@ def add_two_numbers(num1, num2):
     return sum_numbers
 print(add_two_numbers(1,2))
 
-# 2/
+# 2. Area of a circle is calculated as follows: area = π x r x r. Write a function that calculates area_of_circle.
 
-# PI = 3.14, area = π x r x r
+# PI = 3.14
+# area = π x r x r
 
 def area_of_circle(r):
     Pi = 3.14
-    calcul = Pi*r*r
-    return calcul
+    formula = Pi*r*r
+    return formula
 print(area_of_circle(12))
 
-# 3/ 
+# 3. Write a function called add_all_nums which takes arbitrary number of arguments and sums all the arguments. Check if all the list items are number types. If not do give a reasonable feedback.
 
-def add_all_nums(*args): #nb illimite
-    sum_arguments = 0 # on initialise la somme
-    for arg in args: # pour chaque arg qu'on va mettre 
-        if not isinstance(arg, (int, float)): # on teste si c un int ou un float, avec isnot on inverse pour voir si c'est pas le cas
-            print("This is not a number") #si c pas la cas on arrete 
+def add_all_nums(*args): # unlimited args
+    sum_arguments = 0 
+    for arg in args: # for each arg
+        if not isinstance(arg, (int, float)): 
+            print("This is not a number") # if this is not a number we stop the function 
         else:
-            sum_arguments = sum_arguments+arg #sinon on fais la somme donc 0 + chaque argeument
+            sum_arguments = sum_arguments+arg # else we sum with 0 + each arg
     return sum_arguments
             
 
 print(add_all_nums(1,3,8,1))
 
-# 4/ 
+# 4. Temperature in °C can be converted to °F using this formula: °F = (°C x 9/5) + 32. Write a function which converts °C to °F, convert_celsius_to-fahrenheit.
 
-#  °F = (°C x 9/5) + 32
+# °F = (°C x 9/5) + 32
 
 def convert_celsius_to_fahrenheit(C):
     F = (C*9/5) + 32
@@ -55,7 +47,7 @@ def convert_celsius_to_fahrenheit(C):
 
 print(convert_celsius_to_fahrenheit(2))
 
-# 5/ 
+# 5. Write a function called check-season, it takes a month parameter and returns the season: Autumn, Winter, Spring or Summer.
 
 def check_season(month): 
         if month in ["January", "February", "March"]:
@@ -70,8 +62,9 @@ def check_season(month):
 
 check_season("September")
 
-# 6/ 
-# formula y2-y1 / x2 - x1
+# 6. Write a function called calculate_slope which return the slope of a linear equation
+
+# formula =  y2-y1 / x2 - x1
 
 def calculate_slope(x1, y1, x2, y2):
     if x2 == x1:
@@ -81,7 +74,7 @@ def calculate_slope(x1, y1, x2, y2):
 
 print(calculate_slope(2, 1, 4, 3)) 
 
-# 7/ 
+# 7. Quadratic equation is calculated as follows: ax² + bx + c = 0. Write a function which calculates solution set of a quadratic equation, solve_quadratic_eqn.
 
 # quadric_equation = ax2+bc+c = 0
 
@@ -95,28 +88,28 @@ def solve_quadratic_eqn(a, b, c):
     
     elif discriminant == 0:
         x = -b / (2 * a)
-        return (x,) #tuple avec un seul éélement
+        return (x,) # tuple with one element
     
     else:
         real_part = -b / (2 * a)
         imaginary_part = ((-discriminant)**0.5) / (2 * a)
-        # Construire les solutions complexes sous forme de chaînes (string) ou tuples
         x1 = f"{real_part} + {imaginary_part}i"
         x2 = f"{real_part} - {imaginary_part}i"
         return (x1, x2)
 
-# Exemple
+# Example 
+
 print(solve_quadratic_eqn(1, 2, 5))
 
-# 8/
+# 8. Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list.
 
 def print_list(lst):
     for elm in lst: 
         print(elm)
 
-print_list(["Soso", "Ness", "Gibz"]) #pas besoin de reprint
+print_list(["Soso", "Ness", "Gibz"]) # no need to print again
 
-# 9/ 
+# 9. Declare a function named reverse_list. It takes an array as a parameter and it returns the reverse of the array (use loops).
 
 def reverse_list(array): 
     for arr in array:
@@ -126,23 +119,23 @@ def reverse_list(array):
 print(reverse_list([1, 2, 3, 4, 5]))
 print(reverse_list(["A", "B", "C"])) 
 
-# 10/ 
+# 10. Declare a function named capitalize_list_items. It takes a list as a parameter and it returns a capitalized list of items
 
 def capitalize_list_items(lst): 
-    new_lst = [] #pr stocker le res
-    for item in lst:
-        new_lst.append(item.upper()) #met les res dans une nouvelle lsit
+    new_lst = [] 
+    for itm in lst:
+        new_lst.append(itm.upper()) 
     return new_lst
 
 print(capitalize_list_items(["coucou", "je", "teste"]))
 
-# 11/
+# 11. Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
 
-def add_item(lst, item):
-    new_lst = [] #pr stocker le res
+def add_item(lst, itm):
+    new_lst = [] 
     for elm in lst: 
-        new_lst.append(elm) #tt les elements d'origine dans la new
-    new_lst.append(item) # pas besoin de boucle car elm unique
+        new_lst.append(elm) 
+    new_lst.append(itm)
     return new_lst
 
 food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk'];
@@ -151,13 +144,13 @@ print(add_item(food_stuff, 'Meat'))
 numbers = [2, 3, 7, 9]
 print(add_item(numbers, 5))      # [2, 3, 7, 9, 5]
 
-# 12/ 
+# 12. Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.
 
-def remove_item(list, item):
+def remove_item(list, itm):
     new_lst = []
     for elm in list: 
         new_lst.append(elm)
-    new_lst.remove(item)
+    new_lst.remove(itm)
     return new_lst
 
 food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk']
@@ -166,17 +159,19 @@ numbers = [2, 3, 7, 9]
 print(remove_item(numbers, 3))  # [2, 7, 9]
 
 
-# 13/ 
+# 13. Declare a function named sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
 
 def sum_of_numbers(number):
     count = 0
-    for n in range(1, number+1): #on prend la range de 0 au nb +1
-        count += n # a chaque iteration on l'ajoute a count
+    for n in range(1, number+1):
+        count += n
     return count    
 
 print(sum_of_numbers(5))  # 15
 print(sum_of_numbers(10)) # 55
 print(sum_of_numbers(100)) # 5050
+
+# 14. Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
 
 def sum_of_odds(number): 
     remainder = 0 
@@ -190,6 +185,8 @@ def sum_of_odds(number):
     return count
 
 print(sum_of_odds(3))
+
+# 15. Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
 
 def sum_of_even(number):
     remainder = 0 
@@ -207,7 +204,7 @@ print(sum_of_even(12))
 
 # Level 2 :
 
-# 1/ 
+# 1. Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
 
 def even_and_odds(number):
     if number >= 0: 
@@ -220,7 +217,7 @@ def even_and_odds(number):
             else:
                 nb_of_odds += 1
     else: 
-        print("the nb is not positive")
+        print("the number is not positive")
     return nb_of_even, nb_of_odds
 
 even_count, odd_count = even_and_odds(100)
@@ -228,11 +225,11 @@ even_count, odd_count = even_and_odds(100)
 print("The number of odds are {}.".format(odd_count))
 print("The number of evens are {}.".format(even_count))
 
-# 2/
+# 1 bis. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
 
 def factorial(number):
     if number >= 0: 
-        produit = 1 # pr ne pas multiplier par 0
+        produit = 1 # bc we do not want to * by 0
         for n in range(1, number + 1):
             produit = produit * n
     return produit
@@ -240,25 +237,26 @@ def factorial(number):
 print(factorial(5))
 
 
-# 3/ 
+# 2. Call your function is_empty, it takes a parameter and it checks if it is empty or not
 
 def is_empty(lst): 
-    if not lst: #une liste vide est considéréé comme false
-        print("lst is empty")
+    if not lst: # an empty list will return false
+        print(" The list is empty")
     else: 
-        print("not empty")
+        print("The list is not empty")
 
 is_empty(["ines", "soso"])
-is_empty([])                # Affiche "lst is empty"
+is_empty([])                # "The list is empty"
 
+# 3. Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
 
 def calculate_mean(lst): 
-    # (sum of all data points) / nb of data point
+    # (sum of all data points) / nb of data points
     sum_point = 0
     nb_point = 0
     for n in lst: 
         sum_point += n 
-        nb_point = nb_point +1 #could be len(lst) also
+        nb_point = nb_point +1 # could have been len(lst) also
     mean = sum_point / nb_point
     return round(mean,2)
     
@@ -282,13 +280,12 @@ print(calculate_median([1, 3, 3, 1, 3, 4]))
 
 
 def calculate_mode(lst):
-    stocked_data = {} #on crée un dic
-    for n in lst: # pr chque elemen de la liste 
-        if n in stocked_data: # si n est dans sotcked data
-            stocked_data[n] += 1  # On augmente le compteur pour n
+    stocked_data = {} # we create a disc
+    for n in lst: # for each element of the list
+        if n in stocked_data: # if the element is in stocked_data
+            stocked_data[n] += 1  # then we increase by n
         else:
-            stocked_data[n] = 1   # On initialise le compteur à 1
-
+            stocked_data[n] = 1   # or we put 1 
     max_count = 0
     mode = None
     for elm in stocked_data:
@@ -299,7 +296,6 @@ def calculate_mode(lst):
     return mode
 
 print(calculate_mode([1, 2, 2, 3, 4, 2, 7]))
-    
 print(calculate_mode([1,2, 9,1,3,8]))
     
 
@@ -313,7 +309,7 @@ def calculate_range(lst):
 print(calculate_range([1,2,4,12,3]))
 
 def calculate_variance(lst): 
-    #calculate the mean
+    # calculate the mean
     total_values = 0
     susbtracted_values = list()
     for n in lst:
@@ -329,9 +325,6 @@ print(calculate_variance([1, 2, 3, 4, 5]))  # Affiche 2.5
 
 
 def calculate_std(lst): 
-    # i need : mean 
-    # sum of 
-    # n 
     # formula : sum of (mean -mean)**2 / n- 1 and all **0.5
     mean = 0 
     sum_squared = 0
@@ -366,7 +359,9 @@ def show_args(**args):
 show_args(name="Alice", age=30, city="New York")
 
 
-## LEvel 3 : 
+# Level 3 : 
+
+# 1. Write a function called is_prime, which checks if a number is prime.
 
 def is_prime(number):
     if number <= 1:
@@ -379,6 +374,7 @@ def is_prime(number):
 
 print(is_prime(2))
 
+# 2. Write a functions which checks if all items are unique in the list.
 
 def is_unique(lst):
     test_set = set()
@@ -391,7 +387,7 @@ def is_unique(lst):
 is_unique([1, 2, 4, 0, 1])
 
 
-# 4/
+# 4. Write a function which check if provided variable is a valid python variable
 
 def is_valid_variable(name): 
     keywords = [
@@ -404,22 +400,20 @@ def is_valid_variable(name):
         "async", "except", "lambda", "with",
         "await", "finally", "nonlocal", "yield",
         "break", "for", "not"
-    ] #from help("keywords")
+    ] # from help("keywords")
     if name in keywords: 
         return False
-       # Vérifier que le nom n'est pas vide
+       # to see if the name is empty
     if len(name) == 0:
         return False
-    # Vérifier le premier caractère : lettre ou underscore
+    # to check the first char
     first_char = name[0]
     if not (first_char.isalpha() or first_char == "_"):
         return False
-    # Vérifier les autres caractères : lettre, chiffre ou underscore
     for char in name[1:]:
         if not (char.isalnum() or char == "_"):
             return False
-
-    # Si tout est ok
+    # if all is good 
     return True
 
 print(is_valid_variable("variable1"))  # True
@@ -430,7 +424,7 @@ print(is_valid_variable("var!able"))   # False (caractère interdit)
 print(is_valid_variable(""))            # False (vide)
 
 
-# 5/ 
+# 5. Go to the data folder and access the countries-data.py file.
 
 country_data = [
     {
@@ -3053,44 +3047,39 @@ country_data = [
     }
 ]
 
+# 1. Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
+
 def most_spoken_languages(country_data): 
     dic_spoken_languages = dict()
     for country in country_data: 
         if "languages" in country: 
             for language in country["languages"]: 
                 if language in dic_spoken_languages:
-                    dic_spoken_languages[language] += 1 # on ajoute un point si encore langue
+                    dic_spoken_languages[language] += 1 
                 else:
                     dic_spoken_languages[language] = 1
     sorted_languages = sorted(dic_spoken_languages.items(), key=lambda x: x[1], reverse=True)
-    top_languages = [language for language, count in sorted_languages[:10]]  # ou [:20] pour 20 langues
+    top_languages = [language for language, count in sorted_languages[:10]] 
     return top_languages
 
 print(most_spoken_languages(country_data))
 
+# 2. Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order.
+
 def most_populated_countries(country_data):
-    # Dictionnaire pour stocker la population par pays
+    # dict to stock the new data
     dict_populated_countries = {}
-
-    # Parcourir chaque pays dans la liste de données
+    # Iterating each country 
     for country in country_data:
-        # Vérifier que les clés 'population' et 'name' existent dans le dictionnaire pays
+        # Check if the keys 'population' and 'name' exist
         if "population" in country and "name" in country:
-            # Ajouter au dictionnaire la population avec le nom du pays comme clé
             dict_populated_countries[country["name"]] = country["population"]
-
-    # Trier les éléments du dictionnaire par population (valeur) en ordre décroissant
     sorted_population = sorted(
         dict_populated_countries.items(),
-        key=lambda x: x[1],  # Trier par la population (valeur)
-        reverse=True         # Ordre décroissant
+        key=lambda x: x[1],  # by la population (value)
+        reverse=True         # descending order
     )
-
-    # Extraire les noms des 10 premiers pays les plus peuplés
     top_most_populated = [country_name for country_name, population in sorted_population[:10]]
-
-    # Retourner la liste des noms des pays
     return top_most_populated
 
-# Exemple d'appel (en supposant que country_data est défini)
 print(most_populated_countries(country_data))

@@ -5,7 +5,8 @@
 # Level 1 : 
 
 # 1. Declare your age as integer variable'''
-'''age = int(25)
+
+age = int(25)
 print(age)
 
 # 2. Declare your height as a float variable
@@ -131,84 +132,83 @@ print("The euclidian distance is ", euclidian_distance)
 
 x = int(input("Try some x "))
 y = (x)**2 + 6*(x) + 9
-print(y)
+print(y) 
+
+# y will be 0 when x = -3. 
+
+# 12. Find the length of 'python' and 'dragon' and make a falsy comparison statement.
 
 
-# g pas réussi car c chiat
-
-# 12 """
-
-""" print(len("python"))
+print(len("python"))
 print(len("dragon"))
 
 print("python" == "dragon") 
 
-#13/
+# 13. Use and operator to check if 'on' is found in both 'python' and 'dragon'
 
-print("on" in "python" and "on" in "dragon")
+print("on" in "python" and "on" in "dragon") # it's true
 
-#14/
-print("jargon" in "I hope this course is not full of jargon")
+# 14. I hope this course is not full of jargon. Use in operator to check if jargon is in the sentence.
 
-#15/ 
-print("on" not in "python" and "on" not in "dragon")
+print("jargon" in "I hope this course is not full of jargon") # yes it is. 
 
-#16/
+# 15. There is no 'on' in both dragon and python
+
+print("on" not in "python" and "on" not in "dragon") # false
+
+# 16. Find the length of the text python and convert the value to float and convert it to string
 
 lenght_python = len("python")
 print(lenght_python)
 print(float(lenght_python))
 print(str(lenght_python))
 
-# 17
+# 17. Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
 
-# test 1
+# Test 1 
+
 remainder = 0
-x = int(input("Choose an x:"))
+x = int(input("Choose an x :"))
 even_number = (x / 2 and remainder is 0)
 print(x, "is an even number", even_number)
 
-# test 2 
-# formula for the remainder = a%b
+# Test 2 
+
+# formula for the remainder = a % b
 
 even_number = x/2 == 0
 print(x, "is an even number", even_number)
- """
-# it works! :)
 
-# 18 / floor_division = a // b
-'''
+# 18. Check if the floor division of 7 by 3 is equal to the int converted value of 2.7.
+
 print(7//3)
 print(int(2.7))
 
 print((7//3) == int(2.7)) # so it's true
 
-#19/
+# 19. Check if type of '10' is equal to type of 10
 
 print("10" == 10) # false bc str and int
 
-#20/
+# 20. Check if int('9.8') is equal to 10
 
 print(int(9.8) == 10) # false 
 
-# 21 / 
-#Write a script that prompts the user to enter hours and rate per hour. Calculate pay of the person?
+# 21. Write a script that prompts the user to enter hours and rate per hour. Calculate pay of the person?
 
-hours = int(input("Enter hours"))
-rate_per_hour = int(input("Enter rate per hour"))
+hours = int(input("Enter hours: "))
+rate_per_hour = int(input("Enter rate per hour:"))
 weekly_earning = hours * rate_per_hour
 
 print("Your weekly earning is", weekly_earning)
 
-# 22/
+# 22. Write a script that prompts the user to enter number of years. Calculate the number of seconds a person can live. Assume a person can live hundred years
 
-#Write a script that prompts the user to enter number of years. Calculate the number of seconds a person can live. Assume a person can live hundred years
-
-number_of_years = int(input("Enter number of years you have lived"))
-number_of_seconds = 31536000 * number_of_years #number of seconds for one year
+number_of_years = int(input("Enter number of years you have lived: "))
+number_of_seconds = 31536000 * number_of_years # number of seconds for one year
 print("You have lived for", number_of_seconds)
 
-# 23/ 
+# 23. Write a Python script that displays the following table
 
 print(1, 1, 1, 1, 1)
 print(2, 1, 2, 4, 8)
@@ -216,5 +216,3 @@ print(3, 1, 3, 9, 27)
 print(4, 1, 4, 16, 64)
 print(5, 1, 5, 25, 125)
 #idk if it was the right method 
-'''
-

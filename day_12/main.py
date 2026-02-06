@@ -1,3 +1,5 @@
+### Day 12 : Modules 
+
 # main.py file
 
 import mymodule
@@ -11,7 +13,13 @@ print(randint(5, 20)) # it returns a random integer number between [5, 20] inclu
 import string 
 import random
 
-""" def random_user_id(): 
+## Exercises ## 
+
+# Level 1 : 
+
+# 1. Write a function which generates a six digit/character random_user_id.
+
+def random_user_id(): 
     char = string.ascii_letters
     digits = string.digits
     punctuations = string.punctuation
@@ -21,6 +29,8 @@ import random
     
 
 print(random_user_id()) 
+
+# 2. Modify the previous task. Declare a function named user_id_gen_by_user. It doesn’t take any parameters but it takes two inputs using input(). One of the inputs is the number of characters and the second input is the number of IDs which are supposed to be generated.
 
 def id_gen_by_user(): 
     lenghts_id = int(input("Lenght of user id:"))
@@ -37,7 +47,7 @@ def id_gen_by_user():
 
 print(id_gen_by_user()) # user input: 5 5
 
-
+# 3. Write a function named rgb_color_gen. It will generate rgb colors (3 values ranging from 0 to 255 each).
 
 def rgb_color_gen():
     rgb_1 = str(randint(0,255))
@@ -50,9 +60,10 @@ def rgb_color_gen():
 print(rgb_color_gen())
 
 
-# Level 2
+# Level 2 : 
 
-#1.
+# 1. Write a function list_of_hexa_colors which returns any number of hexadecimal colors in an array (six hexadecimal numbers written after #. Hexadecimal numeral system is made out of 16 symbols, 0-9 and first 6 letters of the alphabet, a-f. Check the task 6 for output examples).
+
 
 def list_of_hexa_colors():
     possible_char = "0123456789abcdef"
@@ -62,7 +73,7 @@ def list_of_hexa_colors():
 
 print(list_of_hexa_colors())
 
-# 2.
+# 2. Write a function list_of_rgb_colors which returns any number of RGB colors in an array.
 
 def list_of_rgb_colors():
     number_of_colors = randint(0,20)
@@ -80,6 +91,7 @@ def list_of_rgb_colors():
 
 print(list_of_rgb_colors())
 
+# 3. Write a function generate_colors which can generate any number of hexa or rgb colors.
 
 def generate_colors(type, number):
     colors_generated = list()
@@ -103,13 +115,17 @@ def generate_colors(type, number):
 print(generate_colors('hexa', 3)) # ['#a3e12f','#03ed55','#eb3d2b']
 print(generate_colors('rgb', 5))
 
-## Level 3: 
+# Level 3 : 
+
+# 1. Call your function shuffle_list, it takes a list as a parameter and it returns a shuffled list
 
 def shuffle_list(lst): 
     random.shuffle(lst)
     return lst
 
-print(shuffle_list(["ness", "so", "lae"])) """
+print(shuffle_list(["ness", "so", "lae"]))
+
+# 2. Write a function which returns an array of seven random numbers in a range of 0-9. All the numbers must be unique.
 
 def random_numbers():
     set_numbers = set()

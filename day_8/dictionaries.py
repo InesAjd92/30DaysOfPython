@@ -1,137 +1,128 @@
-### Day 8 
+### Day 8 : Dictionaries ###
 
-# Exercises 
+## Exercises ##
 
-# 1/
+# 1. Create an empty dictionary called dog
 
 dog = dict()
 print(dog)
 
-# 2/ 
+# 2. Add name, color, breed, legs, age to the dog dictionary
 
 dog = {
-    "name" : "Manga",
-    "color" : "Red",
-    "breed" : "European",
-    "legs" : 4, 
-    "age" : 4} # we use : not =
+    "name": "Manga",
+    "color": "Red",
+    "breed": "European",
+    "legs": 4,
+    "age": 4  # we use : not =
+}
+print(dog)
 
-print(dog) 
-
-# 3/
+# 3. Create a student dictionary and add first_name, last_name, gender, age, marital_status, skills, country, city and address as keys
 
 student = {
-    "first_name" : "Ines",
-    "last_name" : "Amd",
-    "gender" : "Female",
-    "age" : 25,
-    "maritale_status" : "Single",
-    "skills" : ["Data", "IA", "SEO"],
-    "country" : "France",
-    "city" : "Colombes",
-    "adress" : "all de l'ile m"
+    "first_name": "Ines",
+    "last_name": "Amd",
+    "gender": "Female",
+    "age": 25,
+    "marital_status": "Single",
+    "skills": ["Data", "AI", "SEO"],
+    "country": "France",
+    "city": "Colombes",
+    "address": "allée de l'île m"
 }
-
 print(student)
 
-# 4/
+# 4. Get the length of the student dictionary
 
-print(len(student)) #9
+print(len(student))  # 9
 
-# 5/
+# 5. Get the value of skills and check the data type, it should be a list
 
-print(type(student.get("skills"))) #yes, this is a list
+print(type(student.get("skills")))  # it's a list
 
-# 6
-
- # i have to to like that d["blabla"]. append 
+# 6. Modify the skills value by adding one or two skills
 
 student["skills"].extend(["R", "Python"])
-
-#extend for individuals elements instead of append!
-
 print(student["skills"])
 
-# 7/
+# 7. Get the dictionary keys as a list
 
 student_keys = student.keys()
 print(student_keys)
 
-# 8/
+# 8. Get the dictionary values as a list
 
 student_values = student.values()
 print(student_values)
 
-# 9/
+# 9. Change the dictionary to a list of tuples using items() method
 
-print(student.items()) #gives a list of tuples 
+print(student.items())  # gives a list of tuples
 
-# 10/
+# 10. Delete one of the items in the dictionary
 
-del student["adress"]
+del student["address"]
 print(student.keys())
 
-# 11/ 
+# 11. Delete the student dictionary
 
-del student 
+del student
 
+## Exercises from Ecosia ##
 
-### Exercises from ecosia 
-
-# 1/ 
+# 1. Create an empty dictionary called car
 
 car = dict()
 print(car)
 
-# 2/
+# 2. Add brand, model, year, color, features to the car dictionary
 
 car = {
-    "brand" : "Toyota", 
-    "model" : "Corolla", 
-    "year" : 2020,
-    "color" : "blue",
-    "features" : ["Air conditioning", "Bluetooth", "Backup camera"]
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2020,
+    "color": "blue",
+    "features": ["Air conditioning", "Bluetooth", "Backup camera"]
 }
-
 print(car)
 
-# 4/ 
+# 3. Get the length of the car dictionary
 
 print(len(car))
 
-# 5/
+# 4. Get the value of features and check the data type, it should be a list
 
-print(type(car["features"])) #list
+print(type(car["features"]))  # <class 'list'>
 
-# 6/
+# 5. Modify the features value by adding one feature
 
 car["features"].append("Sunroof")
 print(car["features"])
 
-# 7/
+# 6. Get the dictionary values
 
 print(car.values())
 
-# 8/
+# 7. Get the dictionary keys
 
 print(car.keys())
 
-# 9/ 
+# 8. Change the dictionary to a list of tuples using items() method
 
 print(car.items())
 
-# 10/
+# 9. Delete one of the items in the dictionary (color)
 
 del car["color"]
 
-# 11/ 
+# 10. Print the keys after deletion
 
 print(car.keys())
 
-# 12/
+# 11. Delete the car dictionary
 
-del car 
+del car
 
-# 13/
-
-print(car) #car is not defined because doesnt exist anymore
+# I tried to print car after deletion (will raise an error because car no longer exists)
+# print(car)  # NameError: name 'car' is not defined

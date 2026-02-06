@@ -1,28 +1,25 @@
-## Day 14 : Higher order functions 
+### Day 14 : Higher order functions ###
 
-# Exercises :
+## Exercises ##
 
 # Level 1 :
 
-# 1/ Explain the difference between map, filter, and reduce.
+# 1. Explain the difference between map, filter, and reduce.
 
 # map = it takes function and an iterable, basically map allow to iterating over a list. 
 # filter = filter takes function and iterable, it iterating over each item and return a boolean for each, if the condition is satisfy, then filter return the items. 
 # reduce = like map but return a single value, we should import it from the functools module
 
-# 2/ Explain the difference between higher order function, closure and decorator
-
+# 2. Explain the difference between higher order function, closure and decorator
 
 # HOF's = they are functions that can take anothers functions in themself, for ex in their args or inside or in their return value. 
 # They are functions manipuling others functions 
 
-# closure = a closure is a function that remember his environment (variables), basically it's like an inside door in a box, when the box its closes, the door remember what were inside. 
+# closure = a closure is a function that remember his environment (variables), basically it's like an inside door in a box, when the box is close, the door remember what was inside. 
 
 # decorator = a decorator allow extra behaviors to a function whithout changing the main function 
 
-
-
-# 3/ 
+# 3. Define a call function before map, filter or reduce, see examples.
 
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -34,7 +31,7 @@ def is_even(num):
 
 
 even_numbers = filter(is_even, numbers)
-print(list(even_numbers))
+print(list(even_numbers)) # to take only even numbers
 
 countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
 
@@ -42,7 +39,7 @@ def is_upper(elm):
     return elm.upper()
 
 countries_upper = map(is_upper, countries)
-print(list(countries_upper))
+print(list(countries_upper)) # all element in uppercase
 
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -54,22 +51,21 @@ from functools import reduce
 total = reduce(sum_all_numbers, numbers)
 print(total) 
 
-
-# 4/ 
-
+# 4. Use for loop to print each country in the countries list.
+ 
 countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
 
 for country in countries: 
     print(country)
 
-# 5/
+# 5. Use for to print each name in the names list.
 
 names = ['Asabeneh', 'Lidiya', 'Ermias', 'Abraham']
 
 for name in names: 
     print(name)
 
-# 6/
+# 6. Use for to print each number in the numbers list.
 
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -79,7 +75,8 @@ for num in numbers:
 
 # Level 2 : 
 
-# 1/ déjà fait hihi
+# 1. Use for to print each number in the numbers list.
+# done before
 
 countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
 
@@ -90,7 +87,7 @@ countries_upper = map(is_upper, countries)
 print(list(countries_upper))
 
 
-# 2/ 
+# 2. Use map to create a new list by changing each number to its square in the numbers list
 
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -100,13 +97,12 @@ def squared_function(num):
 numbers_squared = map(squared_function, numbers)
 print(list(numbers_squared))
 
-
-# 3/ 
+# 3. Use map to change each name to uppercase in the names list
 
 names_upper = map(is_upper, names)
 print(list(names_upper))
 
-# 4/ 
+# 4. Use filter to filter out countries containing 'land'.
 
 def filt_by_land(elm): 
     if "land" in elm: 
@@ -115,7 +111,7 @@ def filt_by_land(elm):
 filt_by_land_countries = filter(filt_by_land, countries)
 print(list(filt_by_land_countries))
 
-# 5/ 
+# 5. Use filter to filter out countries having exactly six characters.
 
 def filt_by_six_char(elm):
     if len(elm) == 6: 
@@ -124,7 +120,7 @@ def filt_by_six_char(elm):
 filt_by_six_char_countries = filter(filt_by_six_char, countries)
 print(list(filt_by_six_char_countries))
 
-# 6/ 
+# 6. Use filter to filter out countries containing six letters and more in the country list.
 
 def filt_by_six_more(elm):
     if len(elm) >= 6: 
@@ -133,7 +129,7 @@ def filt_by_six_more(elm):
 filt_by_six_more_countries = filter(filt_by_six_more, countries)
 print(list(filt_by_six_more_countries))
 
-# 7/ 
+# 7. Use filter to filter out countries starting with an 'E'
 
 def starting_e(elm): 
     return elm[0] == "E"
@@ -141,31 +137,23 @@ def starting_e(elm):
 start_by_e_countries = filter(starting_e, countries)
 print(list(start_by_e_countries))
 
-# 8/ 
+# 8. Chain two or more list iterators (eg. arr.map(callback).filter(callback).reduce(callback))
 
 my_lst = ["ines", "sofia", "gibril", "maman"]
 
 def capitalize_first(elm): 
-    return elm.capitalize()
-
-#pour map 
+    return elm.capitalize() # for map 
 
 def five_at_least(elm):
-    return len(elm) >= 5
-
-# pour filter 
+    return len(elm) >= 5 # for filter 
 
 def concat_all (a,b):
-    return a + "#" + b
-
-# pour reduce
-
+    return a + "#" + b # for reduce
 
 all_in_one = reduce(concat_all,filter(five_at_least, map(capitalize_first, my_lst)))
 print((all_in_one))
 
-
-# 9/ 
+# 9. Declare a function called get_string_lists which takes a list as a parameter and then returns a list containing only string items.
 
 def get_string_lists(lst): 
     def is_string(elm):
@@ -186,8 +174,7 @@ def get_string_lists(lst):
 
 print(get_string_lists(test_lst))
 
-
-# 10/ 
+# 10. Use reduce to sum all the numbers in the numbers list.
 
 def sum_all_numbers(a,b): 
     return a + b
@@ -195,12 +182,12 @@ def sum_all_numbers(a,b):
 result = reduce(sum_all_numbers, numbers)
 print(result)
 
-# 11/ 
+# 11. Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and Iceland are north European countries
 
 def concat_all(a,b): 
     return a + b
 
-countries = ", ".join(countries[:-1]) + " et " + countries[-1] + " are North European countries"
+countries = ", ".join(countries[:-1]) + " and " + countries[-1] + " are North European countries"
 concat_countries = reduce(concat_all, countries)
 print(concat_countries)
 
@@ -219,7 +206,7 @@ result = result + " are North European countries"
 print(result)
 
 
-# 12/ 
+# 12. Declare a function called categorize_countries that returns a list of countries with some common pattern (you can find the countries list in this repository as countries.js(eg 'land', 'ia', 'island', 'stan')).
 
 countries = [
   'Afghanistan',
@@ -431,8 +418,7 @@ def categorize_countries(lst):
 
 print(categorize_countries(countries))
 
-
-# 13/ 
+# 13. Create a function returning a dictionary, where keys stand for starting letters of countries and values are the number of country names starting with that letter.
 
 def starting_with(lst): 
     dic_countries = dict()
@@ -446,22 +432,21 @@ def starting_with(lst):
 
 print(starting_with(countries))
 
-
-# 14/ 
+# 14. Declare a get_first_ten_countries function - it returns a list of first ten countries from the countries.js list in the data folder.
 
 def get_first_ten_countries(lst): 
     return lst[0:11]
 
 print(get_first_ten_countries(countries))
 
-# 15/ 
+# 15. Declare a get_last_ten_countries function that returns the last ten countries in the countries list.
 
 def get_last_ten_countries(lst): 
     return lst[-11:]
 
 print(get_last_ten_countries(countries))
 
-# Level 3: 
+# Level 3 : 
 
 countries_data = [
 
@@ -3088,17 +3073,15 @@ countries_data = [
 
     # 1. Trier les pays par nom
 
+# i. Sort countries by name, by capital, by population
+# ii. Sort out the ten most spoken languages by location.
+# iii. Sort out the ten most populated countries.
 
-# 1. Trier les pays par nom
+
 sorted_by_name = sorted(countries_data, key=lambda x: x['name'])
-
-# 2. Trier les pays par capitale
 sorted_by_capital = sorted(countries_data, key=lambda x: x['capital'])
-
-# 3. Trier les pays par population (du plus grand au plus petit)
 sorted_by_population = sorted(countries_data, key=lambda x: x['population'], reverse=True)
 
-# 4. Trouver les 10 langues les plus parlées 
 
 language_freq = {}
 
@@ -3109,29 +3092,23 @@ for country in countries_data:
         else:
             language_freq[lang] = 1
 
-# Trier les langues par fréquence décroissante
 sorted_languages = sorted(language_freq.items(), key=lambda x: x[1], reverse=True)
 
-# Prendre les 10 premières
 top_10_languages = sorted_languages[:10]
-
-# 5. Obtenir les 10 pays les plus peuplés (déjà trié)
 top_10_populated_countries = sorted_by_population[:10]
 
-# --- Affichage ---
-
-print("10 premiers pays triés par nom :")
+print("10 first countries by name :")
 for country in sorted_by_name[:10]:
     print(country['name'])
 
-print("\n10 premiers pays triés par capitale :")
+print("\n10 first countries by capital :")
 for country in sorted_by_capital[:10]:
     print(country['capital'])
 
-print("\n10 pays les plus peuplés :")
+print("\n10 countries by population :")
 for country in top_10_populated_countries:
     print(f"{country['name']} - Population: {country['population']}")
 
-print("\n10 langues les plus parlées :")
+print("\n10 most spoker languages :")
 for lang, count in top_10_languages:
-    print(f"{lang} - Parlée dans {count} pays")
+    print(f"{lang} - Spoke in {count} country")
