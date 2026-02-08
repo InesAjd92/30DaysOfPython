@@ -74,3 +74,4 @@ paires = [(1, 'a'), (2, 'b'), (3, 'c')]
 
 numbers, letters = zip(*paires)
 print(numbers)
+print(letters)
