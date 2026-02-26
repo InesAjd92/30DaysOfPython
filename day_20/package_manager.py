@@ -165,6 +165,11 @@ print(f"Total number of languages : {total_languages}")
 
 # 4. UCI is one of the most common places to get data sets for data science and machine learning. Read the content of UCL (https://archive.ics.uci.edu/ml/datasets.php). Without additional libraries it will be difficult, so you may try it with BeautifulSoup4
 
+# Note : This code no longer works because the UCI Machine Learning Repository website
+# now loads its dataset list dynamically using JavaScript.
+# The 'requests' library only fetches the initial HTML, which does not include the dataset table.
+# Therefore, BeautifulSoup cannot find the table element, resulting in 'None' and errors.
+
 import requests 
 from bs4 import BeautifulSoup
 
@@ -201,6 +206,7 @@ for row in table.find_all("tr")[1:]: # we loop through all rows except the first
         })
 
 # Display the first 10 datasets with selected information
+
 print("First 10 datasets from UCI Machine Learning Repository:")
 for d in datasets[:10]:
     print(f"Name: {d['name']}, Instances: {d['instances']}, Attributes: {d['attributes']}")
